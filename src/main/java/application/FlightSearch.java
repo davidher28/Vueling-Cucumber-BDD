@@ -43,7 +43,7 @@ public class FlightSearch {
 
     @Override
     public String toString() {
-        return "FlightSearchDTO{" +
+        return "FlightSearch{" +
                 "from='" + from + '\'' +
                 ", to='" + to + '\'' +
                 ", date='" + date + '\'' +
