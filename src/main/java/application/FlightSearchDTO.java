@@ -33,6 +33,14 @@ public class FlightSearchDTO {
         return date;
     }
 
+    public Boolean getRoundTrip() {
+        return round_trip;
+    }
+
+    public String getNumberOfPassengers() {
+        return number_of_passengers;
+    }
+
     @Override
     public String toString() {
         return "FlightSearchDTO{" +
