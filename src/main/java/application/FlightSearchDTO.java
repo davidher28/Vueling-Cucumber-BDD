@@ -7,12 +7,18 @@ public class FlightSearchDTO {
     private final Boolean round_trip;
     private final String number_of_passengers;
 
-    public FlightSearchDTO() {
-        this.from = "Madrid";
-        this.to = "Barcelona";
-        this.date = "01/06/2024";
-        this.round_trip = false;
-        this.number_of_passengers = "1";
+    public FlightSearchDTO(
+            String from,
+            String to,
+            String date,
+            Boolean round_trip,
+            String number_of_passengers
+    ) {
+        this.from = from;
+        this.to = to;
+        this.date = date;
+        this.round_trip = round_trip;
+        this.number_of_passengers = number_of_passengers;
     }
 
     public String getOrigin() {

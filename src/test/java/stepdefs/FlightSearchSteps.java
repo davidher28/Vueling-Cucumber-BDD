@@ -1,7 +1,7 @@
 package stepdefs;
 
 import application.FlightSearchDTO;
-import builders.FlightSearchDataBuilder;
+import builders.FlightSearchBuilder;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.DataTableType;
@@ -35,7 +35,13 @@ public class FlightSearchSteps {
 
     @DataTableType
     public FlightSearchDTO flightSearchEntryTransformer(Map<String, String> row) {
-        return new FlightSearchDTO();
+        return new FlightSearchBuilder()
+                .setOrigin(row.get("from"))
+                .setDestination(row.get("to"))
+                .setDepartureDate(row.get("date"))
+                .setRoundTrip(row.get("round_trip").equals("true"))
+                .setNumberOfPassengers(row.get("number_of_passengers"))
+                .build();
     }
 
     @Given("I have navigated to the vueling website")

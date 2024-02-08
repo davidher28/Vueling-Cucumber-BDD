@@ -9,36 +9,32 @@ public class FlightSearchBuilder {
     private Boolean round_trip;
     private String number_of_passengers;
 
-    public static FlightSearchBuilder aFlightSearch() {
-        return new FlightSearchBuilder();
-    }
-
-    public FlightSearchBuilder withOrigin(String from) {
+    public FlightSearchBuilder setOrigin(String from) {
         this.from = from;
         return this;
     }
 
-    public FlightSearchBuilder withDestination(String to) {
+    public FlightSearchBuilder setDestination(String to) {
         this.to = to;
         return this;
     }
 
-    public FlightSearchBuilder withDepartureDate(String date) {
+    public FlightSearchBuilder setDepartureDate(String date) {
         this.date = date;
         return this;
     }
 
-    public FlightSearchBuilder withRoundTrip(Boolean round_trip) {
+    public FlightSearchBuilder setRoundTrip(Boolean round_trip) {
         this.round_trip = round_trip;
         return this;
     }
 
-    public FlightSearchBuilder withNumberOfPassengers(String number_of_passengers) {
+    public FlightSearchBuilder setNumberOfPassengers(String number_of_passengers) {
         this.number_of_passengers = number_of_passengers;
         return this;
     }
 
     public FlightSearchDTO build() {
-        return new FlightSearchDTO();
+        return new FlightSearchDTO(from, to, date, round_trip, number_of_passengers);
     }
 }
