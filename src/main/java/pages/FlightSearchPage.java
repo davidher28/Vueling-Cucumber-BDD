@@ -1,11 +1,8 @@
 package pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
-import application.FlightSearchDTO;
+import application.FlightSearch;
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,7 +19,7 @@ public class FlightSearchPage extends PageObjectBase {
     private WebElementFacade oneWayLabel;
     private WebElementFacade btnSubmitHomeSearcher;
 
-    public void performFlightSearch(FlightSearchDTO flightSearch) {
+    public void performFlightSearch(FlightSearch flightSearch) {
         LOGGER.debug("performFlightSearch starts, characteristics: [{}]", flightSearch);
 
         // Accept cookies modal

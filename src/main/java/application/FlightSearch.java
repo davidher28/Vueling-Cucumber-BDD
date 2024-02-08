@@ -1,13 +1,13 @@
 package application;
 
-public class FlightSearchDTO {
+public class FlightSearch {
     private final String from;
     private final String to;
     private final String date;
     private final Boolean round_trip;
     private final String number_of_passengers;
 
-    public FlightSearchDTO(
+    public FlightSearch(
             String from,
             String to,
             String date,
@@ -33,7 +33,7 @@ public class FlightSearchDTO {
         return date;
     }
 
-    public Boolean getRoundTrip() {
+    public Boolean isRoundTrip() {
         return round_trip;
     }
 

@@ -1,6 +1,6 @@
 package stepdefs;
 
-import application.FlightSearchDTO;
+import application.FlightSearch;
 import builders.FlightSearchBuilder;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -34,7 +34,7 @@ public class FlightSearchSteps {
     }
 
     @DataTableType
-    public FlightSearchDTO flightSearchEntryTransformer(Map<String, String> row) {
+    public FlightSearch flightSearchEntryTransformer(Map<String, String> row) {
         return new FlightSearchBuilder()
                 .setOrigin(row.get("from"))
                 .setDestination(row.get("to"))
@@ -56,11 +56,11 @@ public class FlightSearchSteps {
 
     @When("I search a flight with the following characteristics:")
     public void iSearchAFlightWithTheFollowingCharacteristics(
-            FlightSearchDTO flightSearchDTO
+            FlightSearch flightSearch
     ) throws Throwable {
         LOGGER.debug("iSearchAFlightWithTheFollowingCharacteristics starts");
 
-        flightSearchPage.performFlightSearch(flightSearchDTO);
+        flightSearchPage.performFlightSearch(flightSearch);
     }
 
     @Then("I get the available flights in the flights list")

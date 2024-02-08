@@ -1,6 +1,6 @@
 package builders;
 
-import application.FlightSearchDTO;
+import application.FlightSearch;
 
 public class FlightSearchBuilder {
     private String from;
@@ -34,7 +34,7 @@ public class FlightSearchBuilder {
         return this;
     }
 
-    public FlightSearchDTO build() {
-        return new FlightSearchDTO(from, to, date, round_trip, number_of_passengers);
+    public FlightSearch build() {
+        return new FlightSearch(from, to, date, round_trip, number_of_passengers);
     }
 }
