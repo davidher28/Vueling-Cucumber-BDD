@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Search a flight using vueling.com" skipped="0" tests="1" time="8.17" timestamp="2024-02-08 02:33:42"><testcase name="Perform a flights search"/></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Search a flight using vueling.com" skipped="1" tests="1" time="6.86" timestamp="2024-02-08 06:05:19"><testcase name="Perform a flights search"><skipped/></testcase></testsuite>

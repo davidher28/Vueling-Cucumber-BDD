@@ -154,7 +154,7 @@
             $("#requirements-tabs").tabs();
             $("#test-tabs").tabs();
 
-            var requirementsTree = [{"text":"Flight search","type":"feature","href":"854747947f57bc8e6971d76d6970a304fe20d955f24b08492fb99a25acedcce7.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-check-circle-fill success-icon \u0027 title\u003d\u0027SUCCESS\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e1 scenario\u003c/span\u003e, \u003cspan class\u003d\u0027feature-count\u0027\u003e1 test case\u003c/span\u003e"]}];
+            var requirementsTree = [{"text":"Search a flight using vueling.com","type":"feature","href":"854747947f57bc8e6971d76d6970a304fe20d955f24b08492fb99a25acedcce7.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e1 scenario\u003c/span\u003e, \u003cspan class\u003d\u0027feature-count\u0027\u003e1 test case\u003c/span\u003e"]}];
 
             $('#tree').treeview({
                 data: requirementsTree,
@@ -187,7 +187,7 @@
         <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
         <div id="projectname-banner" style="float:right">
             <span class="projectname">
-                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projecttitle">David's Automated Test - Vueling Flight Search</span>
                 <span class="projectsubtitle"></span>
             </span>
         </div>
@@ -203,7 +203,7 @@
 
 
 
-                    > <span class="truncate-40">Flight search</span>
+                    > <span class="truncate-40">Search a flight using vueling.com</span>
 
             </span>
         </div>
@@ -225,7 +225,7 @@
             <a href="#"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 08-02-2024 02:33</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 08-02-2024 06:05</span>
     <br style="clear:left"/>
 </div>
 
@@ -242,14 +242,17 @@
 
                                     <div class="col-sm-12">
                                         <span>
-                                            <h2><i class="bi bi-book"></i> Feature: Flight search</h2>
+                                            <h2><i class="bi bi-book"></i> Feature: Search a flight using vueling.com</h2>
                                         </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                             <div class="requirementNarrativeTitle">
-                                Flight search
+                                Narrative:<br />
+In order to search a flight<br />
+As the user of the vueling airline website<br />
+I would like to see multiple flight alternatives after performing a search
                             </div>
 
                     </div>
@@ -308,7 +311,7 @@
                                                                                         <a style="margin-left:0.5em;padding-right: 1.5em;"
                                                                                            href="7cd5830ea07152c4a2ae9d2b6f4296e27ca21c1e35b514601412dca63f2d18a9.html"
                                                                                            title="View test results">
-                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            <a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a>
                                                                                             </a>
 
 
@@ -331,13 +334,13 @@
                                             <div class="col-sm-12">
                                                 <h3>Scenarios</h3>
 
-                                                    <a name="0694e485-6989-4e41-8c38-180e246c9af9"></a>
+                                                    <a name="90669501-dafd-452f-9481-127a85c88b39"></a>
                                                     <p class="rule-tags inline-tag">
                                                     </p>
 
 
                                                         <div class="scenario-docs card" id="3e4686254e2eb4053cd94c53ffabdbc439bc422418b96c560d827eb68285c602">
-                                                            <div class="scenario-docs card-header success"
+                                                            <div class="scenario-docs card-header pending"
                                                                  style="min-height:1.5em;">
                                                                 <div>
                                                                         <span class="scenario-heading">
@@ -351,15 +354,24 @@
                                                                     <span class="scenario-result-icon">
                                                                     
 
-                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                            <a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a>
                                                                         </span>
                                                                 </div>
 
                                                             </div>
                                                             <div class="scenario-docs card-body">
                                                                     <p>Given I have navigated to the vueling website</p>
-                                                                    <p>When I search a flight with the following characteristics:</p>
-                                                                    <p>Then I get the flight alternatives in the flights list</p>
+                                                                    <p><p>When I search a flight with the following characteristics:</p>
+<table>
+<thead>
+<tr><th>from</th><th>to</th><th>date</th><th>round_trip</th><th>number_of_passengers</th></tr>
+</thead>
+<tbody>
+<tr><td>Madrid</td><td>Barcelona</td><td>01/06/2024</td><td>false</td><td>1</td></tr>
+</tbody>
+</table>
+</p>
+                                                                    <p>Then I get the available flights in the flights list</p>
                                                                 <div class="examples">
                                                                 </div>
                                                             </div>
@@ -414,7 +426,7 @@
                         <i class="bi bi-stopwatch"></i> Total
                         Duration
                     </td>
-                    <td>8s</td>
+                    <td>6s</td>
                 </tr>
                 <tr scope="row">
                     <td>
@@ -424,7 +436,7 @@
                     <td>
                         <i class="bi bi-trophy"></i> Fastest Test
                     </td>
-                    <td>8s</td>
+                    <td>6s</td>
                 </tr>
                 <tr scope="row">
                     <td>
@@ -435,30 +447,30 @@
                         <i class="bi bi-skip-start"></i> Slowest
                         Test
                     </td>
-                    <td>8s</td>
+                    <td>6s</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-flag-fill"></i> Tests Started
                     </td>
-                    <td>Feb 08, 2024 02:33:42</td>
+                    <td>Feb 08, 2024 06:05:19</td>
                     <td>
                         <i class="bi bi-stopwatch"></i> Average
                         Execution Time
                     </td>
-                    <td>8s</td>
+                    <td>6s</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-stop-circle"></i> Tests
                         Finished
                     </td>
-                    <td>Feb 08, 2024 02:33:50</td>
+                    <td>Feb 08, 2024 06:05:26</td>
                     <td>
                         <i class="bi bi-stopwatch-fill"></i> Total
                         Execution Time
                     </td>
-                    <td>8s</td>
+                    <td>6s</td>
                 </tr>
                 </tbody>
             </table>
@@ -480,7 +492,7 @@
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                                <tr class="scenario-result SUCCESS">
+                                                                <tr class="scenario-result PENDING">
                                                                     <td>
                                                                             <a href="854747947f57bc8e6971d76d6970a304fe20d955f24b08492fb99a25acedcce7.html">Search a flight using vueling.com</a>
                                                                     </td>
@@ -490,9 +502,9 @@
                                                                     <td><span class='context-icon'><i class='bi bi-browser-chrome' title='Chrome'></i> <i class='bi bi-apple' title='Mac OS X'></i></span><span style="display:none">Chrome,Mac OS X</span>
                                                                     </td>
                                                                     <td>3</td>
-                                                                    <td>02:33:42</td>
-                                                                    <td>8s 173ms</td>
-                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                    <td>06:05:19</td>
+                                                                    <td>6s 858ms</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a> <span style="display:none">PENDING</span>
                                                                     </td>
                                                                 </tr>
                                                         </tbody>
@@ -518,7 +530,7 @@
                                 <h5 class="card-title">Context</h5>
                             <div>
                                     <a href="83a1614f3dda521b0b7f5f6481c9e8fca62028b7ee1d7022b7d38143cdeaeee1.html">
-                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
                                         <i class="bi bi-tag-fill"></i> Chrome, Mac&nbsp;&nbsp;&nbsp;1
                                     </span>
                                     </a>
@@ -567,7 +579,7 @@
             datasets: [{
                 label: 'Test Results',
                 fill: false,
-                data: [{meta: 'Passing tests', value: 1}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                data: [{meta: 'Passing tests', value: 0}, {meta: 'Pending tests', value: 1}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
                 backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                 borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                 borderWidth: 1,
@@ -618,7 +630,7 @@
                         ctx.font = fontSize + "em sans-serif";
                         ctx.textBaseline = "middle";
 
-                        var text = "100%"
+                        var text = " "
                         textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
                         textY = (height / 2) - 40;
 
@@ -662,7 +674,7 @@
             datasets: [{
                 label: 'Feature Coverage',
                 fill: false,
-                data: [{meta: 'Passing tests', value: 1}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                data: [{meta: 'Passing tests', value: 0}, {meta: 'Pending tests', value: 1}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
                 backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                 borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                 borderWidth: 1,
@@ -713,7 +725,7 @@
                         ctx.font = fontSize + "em sans-serif";
                         ctx.textBaseline = "middle";
 
-                        var text = "100%"
+                        var text = " "
                         textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
                         textY = (height / 2) - 40;
 
@@ -758,7 +770,7 @@
             datasets: [
                 {
                     label: 'Automated',
-                    data: [1,0,0,0,0,0,0,0],
+                    data: [0,1,0,0,0,0,0,0],
                     backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                     borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                     borderWidth: 1

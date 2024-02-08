@@ -1,7 +1,10 @@
 package stepdefs;
 
+import application.FlightSearchDTO;
+import builders.FlightSearchDataBuilder;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,12 +15,11 @@ import org.slf4j.LoggerFactory;
 import pages.FlightSearchPage;
 
 import java.lang.invoke.MethodHandles;
+import java.util.Map;
 
 public class FlightSearchSteps {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
-    private static final String HOME = "reservationList.html";
 
     private FlightSearchPage flightSearchPage;
 
@@ -31,26 +33,33 @@ public class FlightSearchSteps {
         LOGGER.debug("afterScenario starts");
     }
 
+    @DataTableType
+    public FlightSearchDTO flightSearchEntryTransformer(Map<String, String> row) {
+        return new FlightSearchDTO();
+    }
+
     @Given("I have navigated to the vueling website")
-    public void i_have_navigated_to_the_vueling_website() throws Throwable {
-        LOGGER.debug("i_have_navigated_to_vueling starts");
+    public void iHaveNavigatedToTheVuelingWebsite() throws Throwable {
+        LOGGER.debug("iHaveNavigatedToTheVuelingWebsite starts");
 
         EnvironmentVariables variables = SystemEnvironmentVariables.createEnvironmentVariables();
-        String vuelingUrl = variables.getProperty("VUELING_SITE");
+        String vuelingUrl = variables.getProperty("WEB_URL");
 
         flightSearchPage.openAt(vuelingUrl);
     }
 
     @When("I search a flight with the following characteristics:")
-    public void i_search_a_flight_with_the_following_characteristics() throws Throwable {
-        LOGGER.debug("i_search_the_following_flight starts");
+    public void iSearchAFlightWithTheFollowingCharacteristics(
+            FlightSearchDTO flightSearchDTO
+    ) throws Throwable {
+        LOGGER.debug("iSearchAFlightWithTheFollowingCharacteristics starts");
 
-        // TODO: Complete this step
+        flightSearchPage.performFlightSearch(flightSearchDTO);
     }
 
     @Then("I get the flight alternatives in the flights list")
-    public void i_get_the_flight_alternatives_in_the_flights_list() throws Throwable {
-        LOGGER.debug("i_get_flights_in_the_flights_list starts");
+    public void iGetTheAvailableFlightsInTheFlightsList() throws Throwable {
+        LOGGER.debug("iGetTheAvailableFlightsInTheFlightsList starts");
 
         // TODO: Complete this step
     }
