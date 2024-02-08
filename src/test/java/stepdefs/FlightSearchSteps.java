@@ -34,13 +34,13 @@ public class FlightSearchSteps {
     }
 
     @DataTableType
-    public FlightSearch flightSearchEntryTransformer(Map<String, String> row) {
+    public FlightSearch __(Map<String, String> row) {
         return new FlightSearchBuilder()
                 .setOrigin(row.get("from"))
                 .setDestination(row.get("to"))
                 .setDepartureDate(row.get("date"))
-                .setRoundTrip(row.get("round_trip").equals("true"))
-                .setNumberOfPassengers(row.get("number_of_passengers"))
+                .setIsRoundTrip(row.get("isRoundTrip").equals("true"))
+                .setNumberOfPassengers(row.get("numberOfPassengers"))
                 .build();
     }
 
@@ -67,6 +67,7 @@ public class FlightSearchSteps {
     public void iGetTheAvailableFlightsInTheFlightsList() throws Throwable {
         LOGGER.debug("iGetTheAvailableFlightsInTheFlightsList starts");
 
-        // TODO: Complete this step
+        // TODO: Implement this step
+        assert true;
     }
 }

@@ -4,21 +4,21 @@ public class FlightSearch {
     private final String from;
     private final String to;
     private final String date;
-    private final Boolean round_trip;
-    private final String number_of_passengers;
+    private final Boolean isRoundTrip;
+    private final String numberOfPassengers;
 
     public FlightSearch(
             String from,
             String to,
             String date,
-            Boolean round_trip,
-            String number_of_passengers
+            Boolean isRoundTrip,
+            String numberOfPassengers
     ) {
         this.from = from;
         this.to = to;
         this.date = date;
-        this.round_trip = round_trip;
-        this.number_of_passengers = number_of_passengers;
+        this.isRoundTrip = isRoundTrip;
+        this.numberOfPassengers = numberOfPassengers;
     }
 
     public String getOrigin() {
@@ -33,12 +33,12 @@ public class FlightSearch {
         return date;
     }
 
-    public Boolean isRoundTrip() {
-        return round_trip;
+    public Boolean getIsRoundTrip() {
+        return isRoundTrip;
     }
 
     public String getNumberOfPassengers() {
-        return number_of_passengers;
+        return numberOfPassengers;
     }
 
     @Override
@@ -47,8 +47,8 @@ public class FlightSearch {
                 "from='" + from + '\'' +
                 ", to='" + to + '\'' +
                 ", date='" + date + '\'' +
-                ", round_trip=" + round_trip +
-                ", number_of_passengers='" + number_of_passengers + '\'' +
+                ", isRoundTrip=" + isRoundTrip +
+                ", numberOfPassengers='" + numberOfPassengers + '\'' +
                 '}';
     }
 }

@@ -6,8 +6,8 @@ public class FlightSearchBuilder {
     private String from;
     private String to;
     private String date;
-    private Boolean round_trip;
-    private String number_of_passengers;
+    private Boolean isRoundTrip;
+    private String numberOfPassengers;
 
     public FlightSearchBuilder setOrigin(String from) {
         this.from = from;
@@ -24,17 +24,17 @@ public class FlightSearchBuilder {
         return this;
     }
 
-    public FlightSearchBuilder setRoundTrip(Boolean round_trip) {
-        this.round_trip = round_trip;
+    public FlightSearchBuilder setIsRoundTrip(Boolean isRoundTrip) {
+        this.isRoundTrip = isRoundTrip;
         return this;
     }
 
-    public FlightSearchBuilder setNumberOfPassengers(String number_of_passengers) {
-        this.number_of_passengers = number_of_passengers;
+    public FlightSearchBuilder setNumberOfPassengers(String numberOfPassengers) {
+        this.numberOfPassengers = numberOfPassengers;
         return this;
     }
 
     public FlightSearch build() {
-        return new FlightSearch(from, to, date, round_trip, number_of_passengers);
+        return new FlightSearch(from, to, date, isRoundTrip, numberOfPassengers);
     }
 }
