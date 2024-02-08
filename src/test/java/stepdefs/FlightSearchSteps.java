@@ -63,7 +63,7 @@ public class FlightSearchSteps {
         flightSearchPage.performFlightSearch(flightSearchDTO);
     }
 
-    @Then("I get the flight alternatives in the flights list")
+    @Then("I get the available flights in the flights list")
     public void iGetTheAvailableFlightsInTheFlightsList() throws Throwable {
         LOGGER.debug("iGetTheAvailableFlightsInTheFlightsList starts");
 
