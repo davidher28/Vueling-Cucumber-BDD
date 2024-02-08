@@ -2,13 +2,14 @@ package pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import application.FlightSearch;
+import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
 
-public class FlightSearchPage extends PageObjectBase {
+public class FlightSearchPage extends PageObject {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @FindBy(id = "onetrust-accept-btn-handler")
@@ -20,7 +21,7 @@ public class FlightSearchPage extends PageObjectBase {
     private WebElementFacade btnSubmitHomeSearcher;
 
     public void performFlightSearch(FlightSearch flightSearch) {
-        LOGGER.debug("performFlightSearch starts, characteristics: [{}]", flightSearch);
+        LOGGER.debug("performFlightSearch starts, search entity: [{}]", flightSearch);
 
         // Accept cookies modal
         cookiesHandler.click();
