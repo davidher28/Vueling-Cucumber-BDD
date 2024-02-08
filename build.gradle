@@ -57,11 +57,11 @@ dependencies {
 /**
  * Compilation and testing properties
  */
-tasks.withType(GroovyCompile) {
+tasks.withType(GroovyCompile).configureEach {
     options.encoding = "UTF-8" // for Java compilation
     groovyOptions.encoding = "UTF-8" // for Groovy compilation
 }
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.compilerArgs << "-Xlint:-options"
     options.encoding = 'UTF-8'
 }
