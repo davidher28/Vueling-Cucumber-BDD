@@ -1,7 +1,7 @@
 Feature: Search a flight using vueling.com
 
   Narrative:
-  In order to search a domestic flight
+  Looking for a domestic flight
   As the user of the vueling website
   I would like to see the available flights after clicking search
 
