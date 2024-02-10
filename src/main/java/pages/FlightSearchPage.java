@@ -19,7 +19,6 @@ public class FlightSearchPage extends PageObject {
     private static final String CALENDAR_DAY_ELEMENT_PREFIX = "calendarDaysTable";
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
     @FindBy(id="onetrust-accept-btn-handler")
     private WebElementFacade cookiesHandler;
     private WebElementFacade originInput;
