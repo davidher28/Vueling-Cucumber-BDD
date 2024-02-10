@@ -12,7 +12,7 @@ import net.thucydides.model.environment.SystemEnvironmentVariables;
 import net.thucydides.model.util.EnvironmentVariables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pages.FlightSearchListPage;
+import pages.FlightSearchResultsPage;
 import pages.FlightSearchPage;
 
 import java.lang.invoke.MethodHandles;
@@ -23,7 +23,7 @@ public class FlightSearchSteps {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     private FlightSearchPage flightSearchPage;
-    private FlightSearchListPage flightSearchListPage;
+    private FlightSearchResultsPage flightSearchListPage;
 
     @Before
     public void beforeScenario() {
