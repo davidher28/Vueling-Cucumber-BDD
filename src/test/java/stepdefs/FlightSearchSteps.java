@@ -2,8 +2,6 @@ package stepdefs;
 
 import application.FlightSearch;
 import builders.FlightSearchBuilder;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -25,16 +23,6 @@ public class FlightSearchSteps {
     private FlightSearchPage flightSearchPage;
     private FlightSearchResultsPage flightSearchListPage;
 
-    @Before
-    public void beforeScenario() {
-        LOGGER.debug("beforeScenario starts");
-    }
-
-    @After
-    public void afterScenario() {
-        LOGGER.debug("afterScenario starts");
-    }
-
     @DataTableType
     public FlightSearch __(Map<String, String> row) {
         return new FlightSearchBuilder()
@@ -53,6 +41,7 @@ public class FlightSearchSteps {
         EnvironmentVariables variables = SystemEnvironmentVariables.createEnvironmentVariables();
         String vuelingUrl = variables.getProperty("WEB_URL");
 
+        // Open the Vueling website
         flightSearchPage.openAt(vuelingUrl);
     }
 
@@ -62,6 +51,7 @@ public class FlightSearchSteps {
     ) throws Throwable {
         LOGGER.debug("iSearchAFlightWithTheFollowingCharacteristics starts");
 
+        // Perform the flight search
         flightSearchPage.performFlightSearch(flightSearch);
     }
 
@@ -69,6 +59,7 @@ public class FlightSearchSteps {
     public void iGetTheAvailableFlightsInTheFlightsList() throws Throwable {
         LOGGER.debug("iGetTheAvailableFlightsInTheFlightsList starts");
 
-        flightSearchListPage.waitForFlightCards();
+        // Verify that there are flights in the results list for the search
+        assert flightSearchListPage.getFlightResultsNumber() > 0;
     }
 }

@@ -42,8 +42,8 @@ public class FlightSearchPage extends PageObject {
         // Submit the search
         btnSubmitHomeSearcher.click();
 
-        // Ignore Booking.com Sponsored Tab
-        String fligthResultsTab = new ArrayList<>(getDriver().getWindowHandles()).get(1);
-        getDriver().switchTo().window(fligthResultsTab);
+        // Ignore Booking.com Promotional Tab
+        String flightResultsTab = new ArrayList<>(getDriver().getWindowHandles()).get(1);
+        getDriver().switchTo().window(flightResultsTab);
     }
 }
