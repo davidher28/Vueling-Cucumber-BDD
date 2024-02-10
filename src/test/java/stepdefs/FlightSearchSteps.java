@@ -21,7 +21,7 @@ public class FlightSearchSteps {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     private FlightSearchPage flightSearchPage;
-    private FlightSearchResultsPage flightSearchResultsPagePage;
+    private FlightSearchResultsPage flightSearchResultsPage;
 
     @DataTableType
     public FlightSearch __(Map<String, String> row) {
@@ -60,6 +60,6 @@ public class FlightSearchSteps {
         LOGGER.debug("iGetTheAvailableFlightsInTheFlightResultsList starts");
 
         // Verify that there are flights in the results page for the performed search
-        assert flightSearchResultsPagePage.getFlightResultsNumber() > 0;
+        assert !flightSearchResultsPage.getFlightResults().isEmpty();
     }
 }
