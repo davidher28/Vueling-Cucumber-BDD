@@ -1,8 +1,14 @@
 # David's Automated BDD Testing - Vueling Flight Search
 
+#### Fundamentos de pruebas 23/24
+#### Entregable 1 Serenity BDD
+#### David Hernández Cárdenas - [david.hc@students.salle.url.edu](david.hc@students.salle.url.edu)
+
+---
+
 Este README proporciona instrucciones acerca de la ejecución del FlightSearchTest sobre el website de [Vueling.com](https://www.vueling.com/).
 
-## Tecnologías Utilizadas
+### Tecnologías Utilizadas
 
 - Java
 - Selenium WebDriver
@@ -14,13 +20,13 @@ Este README proporciona instrucciones acerca de la ejecución del FlightSearchTe
 - IntelliJ IDEA
 - Page Object Model
 
-## Requisitos Previos
+### Dependencias
 
 - Java Development Kit (JDK) instalado en su máquina (versión 21).
 - Gradle instalado en su máquina.
 - IDE IntelliJ IDEA instalado en su máquina.
 
-## Pasos para Ejecutar la Prueba
+### Pasos para ejecutar la prueba
 
 1. Clonar el repositorio en su máquina.
 2. Abrir el proyecto en IntelliJ IDEA.
