@@ -55,9 +55,9 @@ public class FlightSearchSteps {
         flightSearchPage.performFlightSearch(flightSearch);
     }
 
-    @Then("I get the available flights in the flights list")
-    public void iGetTheAvailableFlightsInTheFlightsList() throws Throwable {
-        LOGGER.debug("iGetTheAvailableFlightsInTheFlightsList starts");
+    @Then("I get the available flights in the flight results list")
+    public void iGetTheAvailableFlightsInTheFlightResultsList() throws Throwable {
+        LOGGER.debug("iGetTheAvailableFlightsInTheFlightResultsList starts");
 
         // Verify that there are flights in the results page for the performed search
         assert flightSearchResultsPagePage.getFlightResultsNumber() > 0;

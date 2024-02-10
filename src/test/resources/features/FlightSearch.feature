@@ -10,4 +10,4 @@ Feature: Search a flight using vueling.com
     When I search a flight with the following characteristics:
       | from    | to           | date          | isRoundTrip | numberOfPassengers    |
       | Madrid  | Barcelona    | 01/06/2024    | false       | 1                     |
-    Then I get the available flights in the flights list
+    Then I get the available flights in the flight results list
