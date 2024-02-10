@@ -25,6 +25,6 @@ Este README proporciona instrucciones acerca de la ejecución del FlightSearchTe
 1. Clonar el repositorio en su máquina.
 2. Abrir el proyecto en IntelliJ IDEA.
 3. Sincronizar el proyecto con Gradle.
-[GradleSync.png](public%2FGradleSync.png)
+![GradleSync.png](public%2FGradleSync.png)
 4. Ejecutar la prueba desde el archivo `FlightSearchTest.java`.
 ![TestExecution.png](public%2FTestExecution.png)
