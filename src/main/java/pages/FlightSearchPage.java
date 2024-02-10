@@ -13,12 +13,14 @@ import java.util.ArrayList;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class FlightSearchPage extends PageObject {
 
     private static final String CALENDAR_DAY_ELEMENT_PREFIX = "calendarDaysTable";
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
     @FindBy(id="onetrust-accept-btn-handler")
     private WebElementFacade cookiesHandler;
     private WebElementFacade originInput;
@@ -52,8 +54,8 @@ public class FlightSearchPage extends PageObject {
         btnSubmitHomeSearcher.click();
 
         // Ignore Booking.com promotional Tab
-        String flightResultsTab = new ArrayList<>(getDriver().getWindowHandles()).get(1);
-        getDriver().switchTo().window(flightResultsTab);
+        List<String> tabs = new ArrayList<String>(getDriver().getWindowHandles());
+        getDriver().switchTo().window(tabs.get(1));
     }
 
     private void clickDesiredDate(String date) {
@@ -70,21 +72,21 @@ public class FlightSearchPage extends PageObject {
         desiredDayElement.click();
     }
 
+    private void adjustVuelingCalendar(Integer monthDiff) {
+        WebElementFacade calendarButton = monthDiff < 0
+                ? prevButtonCalendar
+                : nextButtonCalendar;
+
+        for (int i = 0; i < Math.abs(monthDiff); i++) {
+            calendarButton.click();
+        }
+    }
+
     private Integer calculateMonthDifference(LocalDate currentDate, LocalDate desiredDate) {
         return (
             desiredDate.getMonthValue() - currentDate.getMonthValue() +
             12 * (desiredDate.getYear() - currentDate.getYear())
         );
-    }
-
-    private void adjustVuelingCalendar(Integer monthDiff) {
-        WebElementFacade calendarButton = monthDiff < 0
-            ? prevButtonCalendar
-            : nextButtonCalendar;
-
-        for (int i = 0; i < Math.abs(monthDiff); i++) {
-            calendarButton.click();
-        }
     }
 
     private String constructElementId(LocalDate date) {
