@@ -21,7 +21,6 @@ import static org.junit.Assert.assertFalse;
 public class FlightSearchSteps {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
     private FlightSearchPage flightSearchPage;
     private FlightSearchResultsPage flightSearchResultsPage;
 
@@ -61,7 +60,7 @@ public class FlightSearchSteps {
     public void iGetTheAvailableFlightsInTheFlightResultsList() throws Throwable {
         LOGGER.debug("iGetTheAvailableFlightsInTheFlightResultsList starts");
 
-        // Verify that indeed are flights in the results page for the performed search
+        // Verify the available flights in the results page for the performed search
         assertFalse(flightSearchResultsPage.getFlightResults().isEmpty());
     }
 }

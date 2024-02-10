@@ -3,6 +3,7 @@ package builders;
 import application.FlightSearch;
 
 public class FlightSearchBuilder {
+
     private String from;
     private String to;
     private String date;

@@ -1,6 +1,5 @@
 package pages;
 
-import io.cucumber.java.sl.In;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import application.FlightSearch;
 import net.serenitybdd.core.pages.PageObject;
@@ -16,10 +15,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class FlightSearchPage extends PageObject {
-    private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private static final String CALENDAR_DAY_ELEMENT_PREFIX = "calendarDaysTable";
+    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @FindBy(id="onetrust-accept-btn-handler")
     private WebElementFacade cookiesHandler;

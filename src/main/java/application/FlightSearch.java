@@ -1,6 +1,7 @@
 package application;
 
 public class FlightSearch {
+
     private final String from;
     private final String to;
     private final String date;

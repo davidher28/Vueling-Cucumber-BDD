@@ -11,6 +11,7 @@ import java.lang.invoke.MethodHandles;
 import java.util.List;
 
 public class FlightSearchResultsPage extends PageObject {
+
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     private WebElementFacade flightCardsContainer;
 
@@ -18,7 +19,7 @@ public class FlightSearchResultsPage extends PageObject {
         LOGGER.debug("getFlightResults starts");
 
         List<WebElement> flightResults = flightCardsContainer.findElements(
-                By.className("trip-selector_item")
+            By.className("trip-selector_item")
         );
 
         LOGGER.debug("getFlightResultsNumber ends, number of flights: [{}]", flightResults.size());
