@@ -28,12 +28,11 @@ Este README proporciona instrucciones acerca de la ejecución del FlightSearchTe
 
 ### Pasos para ejecutar la prueba
 
-1. Clonar el repositorio en su máquina.
-2. Abrir el proyecto en IntelliJ IDEA.
-3. Sincronizar el proyecto con Gradle.
+1. Abrir el proyecto en IntelliJ IDEA.
+2. Sincronizar el proyecto con Gradle.
 ![GradleSync.png](public%2FGradleSync.png)
-4. Ejecutar la prueba desde el archivo `FlightSearchTest.java`.
+3. Ejecutar la prueba desde el archivo `FlightSearchTest.java`.
 ![TestExecution.png](public%2FTestExecution.png)
-5. Verificación del reporte generado en el directorio `target/site/serenity/index.html`.
+4. Verificación del reporte generado en el directorio `target/site/serenity/index.html`.
 ![Report1.png](public%2FReport1.png)
 ![Report2.png](public%2FReport2.png)
