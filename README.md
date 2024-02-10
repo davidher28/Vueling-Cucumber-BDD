@@ -6,9 +6,9 @@
 
 ---
 
-Este README proporciona instrucciones acerca de la ejecución del FlightSearchTest sobre el website de [Vueling.com](https://www.vueling.com/).
+Este README proporciona instrucciones acerca de la ejecución del `FlightSearchTest` sobre el website de [Vueling.com](https://www.vueling.com/).
 
-### Tecnologías Utilizadas
+## Herramientas Utilizadas
 
 - Java
 - Selenium WebDriver
@@ -17,16 +17,19 @@ Este README proporciona instrucciones acerca de la ejecución del FlightSearchTe
 - Gherkin
 - Gradle
 - JUnit
-- IntelliJ IDEA
-- Page Object Model
 
-### Dependencias
+## Patrones Utilizados
+- Page Object Model
+- Facade
+- Builder
+
+## Dependencias técnicas
 
 - Java Development Kit (JDK) instalado en su máquina (versión 21).
 - Gradle instalado en su máquina.
 - IDE IntelliJ IDEA instalado en su máquina.
 
-### Pasos para ejecutar la prueba
+## Pasos para ejecutar la prueba
 
 1. Abrir el proyecto en IntelliJ IDEA.
 2. Sincronizar el proyecto con Gradle.
