@@ -7,7 +7,7 @@ public class FlightSearchBuilder {
     private String to;
     private String date;
     private Boolean isRoundTrip;
-    private String numberOfPassengers;
+    private Integer numberOfPassengers;
 
     public FlightSearchBuilder setOrigin(String from) {
         this.from = from;
@@ -29,7 +29,7 @@ public class FlightSearchBuilder {
         return this;
     }
 
-    public FlightSearchBuilder setNumberOfPassengers(String numberOfPassengers) {
+    public FlightSearchBuilder setNumberOfPassengers(Integer numberOfPassengers) {
         this.numberOfPassengers = numberOfPassengers;
         return this;
     }

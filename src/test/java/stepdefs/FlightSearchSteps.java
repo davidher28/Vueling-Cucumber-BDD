@@ -30,7 +30,7 @@ public class FlightSearchSteps {
                 .setDestination(row.get("to"))
                 .setDepartureDate(row.get("date"))
                 .setIsRoundTrip(row.get("isRoundTrip").equals("true"))
-                .setNumberOfPassengers(row.get("numberOfPassengers"))
+                .setNumberOfPassengers(Integer.valueOf(row.get("numberOfPassengers")))
                 .build();
     }
 
@@ -51,7 +51,7 @@ public class FlightSearchSteps {
     ) throws Throwable {
         LOGGER.debug("iSearchAFlightWithTheFollowingCharacteristics starts");
 
-        // Perform the flight search
+        // Perform the flights search
         flightSearchPage.performFlightSearch(flightSearch);
     }
 
@@ -59,7 +59,7 @@ public class FlightSearchSteps {
     public void iGetTheAvailableFlightsInTheFlightsList() throws Throwable {
         LOGGER.debug("iGetTheAvailableFlightsInTheFlightsList starts");
 
-        // Verify that there are flights in the results list for the search
+        // Verify that there are flights in the results page for the performed search
         assert flightSearchListPage.getFlightResultsNumber() > 0;
     }
 }

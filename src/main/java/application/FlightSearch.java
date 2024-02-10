@@ -5,14 +5,14 @@ public class FlightSearch {
     private final String to;
     private final String date;
     private final Boolean isRoundTrip;
-    private final String numberOfPassengers;
+    private final Integer numberOfPassengers;
 
     public FlightSearch(
             String from,
             String to,
             String date,
             Boolean isRoundTrip,
-            String numberOfPassengers
+            Integer numberOfPassengers
     ) {
         this.from = from;
         this.to = to;
@@ -37,7 +37,7 @@ public class FlightSearch {
         return isRoundTrip;
     }
 
-    public String getNumberOfPassengers() {
+    public Integer getNumberOfPassengers() {
         return numberOfPassengers;
     }
 

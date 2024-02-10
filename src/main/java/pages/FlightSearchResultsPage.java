@@ -12,14 +12,14 @@ public class FlightSearchResultsPage extends PageObject {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     private WebElementFacade flightCardsContainer;
 
-    public int getFlightResultsNumber() {
+    public Integer getFlightResultsNumber() {
         LOGGER.debug("getFlightResultsNumber starts");
 
-        int flightsNumber = flightCardsContainer.findElements(
+        Integer flightsNumber = flightCardsContainer.findElements(
                 By.className("trip-selector_item")
         ).size();
-        LOGGER.debug("getFlightResultsNumber ends, number of flights: [{}]", flightsNumber);
 
+        LOGGER.debug("getFlightResultsNumber ends, number of flights: [{}]", flightsNumber);
         return flightsNumber;
     }
 }

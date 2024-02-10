@@ -33,8 +33,10 @@ public class FlightSearchPage extends PageObject {
         // Fill in the destination
         destinationInput.typeAndEnter(flightSearch.getDestination());
 
-        // Choose one way flights
-        oneWayLabel.click();
+        // Choose one way flights if needed
+        if (!flightSearch.getIsRoundTrip()) {
+            oneWayLabel.click();
+        }
 
         // Fill in the outbound date
         outboundDate.sendKeys(flightSearch.getDepartureDate());
