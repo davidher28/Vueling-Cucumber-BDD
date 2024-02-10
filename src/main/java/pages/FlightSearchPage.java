@@ -61,13 +61,14 @@ public class FlightSearchPage extends PageObject {
         LocalDate currentDate = LocalDate.now();
         LocalDate desiredDate = LocalDate.parse(date, DATE_FORMATTER);
 
-        // Navigate to the desired month interacting with the Vueling calendar
+        // Navigate to the desired month interacting through the Vueling calendar
         adjustVuelingCalendar(
             calculateMonthDifference(currentDate, desiredDate)
         );
 
-        String desiredDayElementId = constructElementId(desiredDate);
-        WebElementFacade desiredDayElement = find(By.id(desiredDayElementId));
+        WebElementFacade desiredDayElement = find(By.id(
+                constructElementId(desiredDate)
+        ));
         desiredDayElement.click();
     }
 
@@ -77,12 +78,12 @@ public class FlightSearchPage extends PageObject {
     }
 
     private void adjustVuelingCalendar(Integer monthDiff) {
-        WebElementFacade buttonToClick = monthDiff < 0
+        WebElementFacade calendarButton = monthDiff < 0
                 ? prevButtonCalendar
                 : nextButtonCalendar;
 
         for (int i = 0; i < Math.abs(monthDiff); i++) {
-            buttonToClick.click();
+            calendarButton.click();
         }
     }
 
