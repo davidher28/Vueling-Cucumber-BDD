@@ -28,12 +28,12 @@ public class FlightSearchSteps {
     @DataTableType
     public FlightSearch __(Map<String, String> row) {
         return new FlightSearchBuilder()
-                .setOrigin(row.get("from"))
-                .setDestination(row.get("to"))
-                .setDepartureDate(row.get("date"))
-                .setIsRoundTrip(row.get("isRoundTrip").equals("true"))
-                .setNumberOfPassengers(Integer.valueOf(row.get("numberOfPassengers")))
-                .build();
+            .setOrigin(row.get("from"))
+            .setDestination(row.get("to"))
+            .setDepartureDate(row.get("date"))
+            .setIsRoundTrip(row.get("isRoundTrip").equals("true"))
+            .setNumberOfPassengers(Integer.valueOf(row.get("numberOfPassengers")))
+            .build();
     }
 
     @Given("I have navigated to the vueling website")

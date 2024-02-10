@@ -1,5 +1,6 @@
 package pages;
 
+import io.cucumber.java.sl.In;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import application.FlightSearch;
 import net.serenitybdd.core.pages.PageObject;
@@ -35,24 +36,24 @@ public class FlightSearchPage extends PageObject {
         // Accept cookies modal
         cookiesHandler.click();
 
-        // Fill in the origin
+        // Fill in the flight origin
         originInput.typeAndEnter(flightSearch.getOrigin());
 
-        // Fill in the destination
+        // Fill in the flight destination
         destinationInput.typeAndEnter(flightSearch.getDestination());
 
-        // Choose one way flights if needed
+        // Choose one way flight if needed
         if (!flightSearch.getIsRoundTrip()) {
             oneWayLabel.click();
         }
 
-        // Fill in the outbound date
+        // Fill in the flight outbound date
         clickDesiredDate(flightSearch.getDepartureDate());
 
         // Submit the search
         btnSubmitHomeSearcher.click();
 
-        // Ignore Booking.com Promotional Tab
+        // Ignore Booking.com promotional Tab
         String flightResultsTab = new ArrayList<>(getDriver().getWindowHandles()).get(1);
         getDriver().switchTo().window(flightResultsTab);
     }
@@ -62,25 +63,26 @@ public class FlightSearchPage extends PageObject {
         LocalDate desiredDate = LocalDate.parse(date, DATE_FORMATTER);
 
         // Navigate to the desired month interacting through the Vueling calendar
-        adjustVuelingCalendar(
-            calculateMonthDifference(currentDate, desiredDate)
-        );
+        Integer monthDiff = calculateMonthDifference(currentDate, desiredDate);
+        adjustVuelingCalendar(monthDiff);
 
         WebElementFacade desiredDayElement = find(By.id(
-                constructElementId(desiredDate)
+            constructElementId(desiredDate)
         ));
         desiredDayElement.click();
     }
 
     private Integer calculateMonthDifference(LocalDate currentDate, LocalDate desiredDate) {
-        return desiredDate.getMonthValue() - currentDate.getMonthValue() +
-                12 * (desiredDate.getYear() - currentDate.getYear());
+        return (
+            desiredDate.getMonthValue() - currentDate.getMonthValue() +
+            12 * (desiredDate.getYear() - currentDate.getYear())
+        );
     }
 
     private void adjustVuelingCalendar(Integer monthDiff) {
         WebElementFacade calendarButton = monthDiff < 0
-                ? prevButtonCalendar
-                : nextButtonCalendar;
+            ? prevButtonCalendar
+            : nextButtonCalendar;
 
         for (int i = 0; i < Math.abs(monthDiff); i++) {
             calendarButton.click();
@@ -89,11 +91,11 @@ public class FlightSearchPage extends PageObject {
 
     private String constructElementId(LocalDate date) {
         return String.format(
-                "%s%s%s%s",
-                CALENDAR_DAY_ELEMENT_PREFIX,
-                date.getYear(),
-                date.getMonthValue() - 1,
-                date.getDayOfMonth()
+            "%s%s%s%s",
+            CALENDAR_DAY_ELEMENT_PREFIX,
+            date.getYear(),
+            date.getMonthValue() - 1,
+            date.getDayOfMonth()
         );
     }
 }

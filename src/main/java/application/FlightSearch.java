@@ -43,12 +43,14 @@ public class FlightSearch {
 
     @Override
     public String toString() {
-        return "FlightSearch{" +
-                "from='" + from + '\'' +
-                ", to='" + to + '\'' +
-                ", date='" + date + '\'' +
-                ", isRoundTrip=" + isRoundTrip +
-                ", numberOfPassengers='" + numberOfPassengers + '\'' +
-                '}';
+        return (
+            "FlightSearch{" +
+            "from='" + from + '\'' +
+            ", to='" + to + '\'' +
+            ", date='" + date + '\'' +
+            ", isRoundTrip=" + isRoundTrip +
+            ", numberOfPassengers='" + numberOfPassengers + '\'' +
+            '}'
+        );
     }
 }
