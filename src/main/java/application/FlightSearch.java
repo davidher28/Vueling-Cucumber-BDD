@@ -9,11 +9,11 @@ public class FlightSearch {
     private final Integer numberOfPassengers;
 
     public FlightSearch(
-            String from,
-            String to,
-            String date,
-            Boolean isRoundTrip,
-            Integer numberOfPassengers
+        String from,
+        String to,
+        String date,
+        Boolean isRoundTrip,
+        Integer numberOfPassengers
     ) {
         this.from = from;
         this.to = to;
