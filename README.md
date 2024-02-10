@@ -36,6 +36,6 @@ Este README proporciona instrucciones acerca de la ejecución del `FlightSearchT
 ![GradleSync.png](public%2FGradleSync.png)
 3. Ejecutar la prueba desde el archivo `FlightSearchTest.java`.
 ![TestExecution.png](public%2FTestExecution.png)
-4. Verificación del reporte generado en el directorio `target/site/serenity/index.html`.
+4. Verificar el reporte generado en el directorio `target/site/serenity/index.html`.
 ![Report1.png](public%2FReport1.png)
 ![Report2.png](public%2FReport2.png)
