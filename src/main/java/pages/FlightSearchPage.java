@@ -8,11 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
+import java.util.ArrayList;
 
 public class FlightSearchPage extends PageObject {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    @FindBy(id = "onetrust-accept-btn-handler")
+    @FindBy(id="onetrust-accept-btn-handler")
     private WebElementFacade cookiesHandler;
     private WebElementFacade originInput;
     private WebElementFacade destinationInput;
@@ -40,5 +41,9 @@ public class FlightSearchPage extends PageObject {
 
         // Submit the search
         btnSubmitHomeSearcher.click();
+
+        // Ignore Booking.com Sponsored Tab
+        String fligthResultsTab = new ArrayList<>(getDriver().getWindowHandles()).get(1);
+        getDriver().switchTo().window(fligthResultsTab);
     }
 }

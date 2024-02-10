@@ -12,6 +12,7 @@ import net.thucydides.model.environment.SystemEnvironmentVariables;
 import net.thucydides.model.util.EnvironmentVariables;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pages.FlightSearchListPage;
 import pages.FlightSearchPage;
 
 import java.lang.invoke.MethodHandles;
@@ -22,6 +23,7 @@ public class FlightSearchSteps {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     private FlightSearchPage flightSearchPage;
+    private FlightSearchListPage flightSearchListPage;
 
     @Before
     public void beforeScenario() {
@@ -67,7 +69,6 @@ public class FlightSearchSteps {
     public void iGetTheAvailableFlightsInTheFlightsList() throws Throwable {
         LOGGER.debug("iGetTheAvailableFlightsInTheFlightsList starts");
 
-        // TODO: Implement this step
-        assert true;
+        flightSearchListPage.waitForFlightCards();
     }
 }
