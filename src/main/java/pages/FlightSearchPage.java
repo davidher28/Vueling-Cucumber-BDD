@@ -30,6 +30,8 @@ public class FlightSearchPage extends PageObject {
     private WebElementFacade prevButtonCalendar;
     private WebElementFacade nextButtonCalendar;
     private WebElementFacade oneWayLabel;
+    private WebElementFacade passengersInputLabel;
+    private WebElementFacade adultsIncrease;
     private WebElementFacade btnSubmitHomeSearcher;
 
     public void performFlightSearch(FlightSearch flightSearch) {
@@ -47,9 +49,11 @@ public class FlightSearchPage extends PageObject {
             flightSearch.getIsRoundTrip()
         );
 
+        increaseNumberOfPassengers(flightSearch.getNumberOfPassengers());
+
         btnSubmitHomeSearcher.click();
 
-        switchToVuelingResultsTab();
+        switchToVuelingTab();
     }
 
     private void fillInFlightDates(String departureDate, String returnDate, Boolean isRoundTrip) {
@@ -59,6 +63,13 @@ public class FlightSearchPage extends PageObject {
             return;
         }
         oneWayLabel.click();
+    }
+
+    private void increaseNumberOfPassengers(Integer numberOfPassengers) {
+        passengersInputLabel.click();
+        for (int i = 0; i < numberOfPassengers - 1; i++) {
+            adultsIncrease.click();
+        }
     }
 
     private void clickDesiredDate(String date, String... currentCalendarDate) {
@@ -72,7 +83,7 @@ public class FlightSearchPage extends PageObject {
         navigateVuelingCalendar(monthDiff);
 
         WebElementFacade desiredDayElement = find(By.id(
-            constructElementId(desiredDate)
+            constructCalendarDayId(desiredDate)
         ));
         desiredDayElement.click();
     }
@@ -87,7 +98,7 @@ public class FlightSearchPage extends PageObject {
         }
     }
 
-    private void switchToVuelingResultsTab() {
+    private void switchToVuelingTab() {
         List<String> currentTabs = new ArrayList<>(getDriver().getWindowHandles());
         getDriver().switchTo().window(currentTabs.get(1));
     }
@@ -99,7 +110,7 @@ public class FlightSearchPage extends PageObject {
         );
     }
 
-    private String constructElementId(LocalDate date) {
+    private String constructCalendarDayId(LocalDate date) {
         return String.format(
             "%s%s%s%s",
             CALENDAR_DAY_ELEMENT_PREFIX,

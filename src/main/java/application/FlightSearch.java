@@ -44,6 +44,10 @@ public class FlightSearch {
         return isRoundTrip;
     }
 
+    public Integer getNumberOfPassengers() {
+        return numberOfPassengers;
+    }
+
     @Override
     public String toString() {
         return (
