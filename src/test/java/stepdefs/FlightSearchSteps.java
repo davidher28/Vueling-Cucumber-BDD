@@ -30,7 +30,7 @@ public class FlightSearchSteps {
             .setOrigin(row.get("from"))
             .setDestination(row.get("to"))
             .setDepartureDate(row.get("date"))
-            .setIsRoundTrip(row.get("isRoundTrip").equals("true"))
+            .setReturnDate(row.get("returnDate"))
             .setNumberOfPassengers(Integer.valueOf(row.get("numberOfPassengers")))
             .build();
     }

@@ -5,6 +5,7 @@ public class FlightSearch {
     private final String from;
     private final String to;
     private final String date;
+    private final String returnDate;
     private final Boolean isRoundTrip;
     private final Integer numberOfPassengers;
 
@@ -12,13 +13,14 @@ public class FlightSearch {
         String from,
         String to,
         String date,
-        Boolean isRoundTrip,
+        String returnDate,
         Integer numberOfPassengers
     ) {
         this.from = from;
         this.to = to;
         this.date = date;
-        this.isRoundTrip = isRoundTrip;
+        this.returnDate = returnDate;
+        this.isRoundTrip = date != null && returnDate != null;
         this.numberOfPassengers = numberOfPassengers;
     }
 
@@ -34,6 +36,10 @@ public class FlightSearch {
         return date;
     }
 
+    public String getReturnDate() {
+        return returnDate;
+    }
+
     public Boolean getIsRoundTrip() {
         return isRoundTrip;
     }
@@ -45,7 +51,8 @@ public class FlightSearch {
             "from='" + from + '\'' +
             ", to='" + to + '\'' +
             ", date='" + date + '\'' +
-            ", isRoundTrip=" + isRoundTrip +
+            ", returnDate='" + returnDate + '\'' +
+            ", isRoundTrip=" + isRoundTrip + '\'' +
             ", numberOfPassengers='" + numberOfPassengers + '\'' +
             '}'
         );

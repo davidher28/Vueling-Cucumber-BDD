@@ -7,7 +7,7 @@ public class FlightSearchBuilder {
     private String from;
     private String to;
     private String date;
-    private Boolean isRoundTrip;
+    private String returnDate;
     private Integer numberOfPassengers;
 
     public FlightSearchBuilder setOrigin(String from) {
@@ -25,8 +25,8 @@ public class FlightSearchBuilder {
         return this;
     }
 
-    public FlightSearchBuilder setIsRoundTrip(Boolean isRoundTrip) {
-        this.isRoundTrip = isRoundTrip;
+    public FlightSearchBuilder setReturnDate(String returnDate) {
+        this.returnDate = returnDate;
         return this;
     }
 
@@ -36,6 +36,6 @@ public class FlightSearchBuilder {
     }
 
     public FlightSearch build() {
-        return new FlightSearch(from, to, date, isRoundTrip, numberOfPassengers);
+        return new FlightSearch(from, to, date, returnDate, numberOfPassengers);
     }
 }

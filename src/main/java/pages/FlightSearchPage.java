@@ -1,5 +1,6 @@
 package pages;
 
+import net.serenitybdd.annotations.DefaultUrl;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import application.FlightSearch;
 import net.serenitybdd.core.pages.PageObject;
@@ -15,6 +16,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+@DefaultUrl("https://www.vueling.com/es")
 public class FlightSearchPage extends PageObject {
 
     private static final String CALENDAR_DAY_ELEMENT_PREFIX = "calendarDaysTable";
@@ -33,38 +35,41 @@ public class FlightSearchPage extends PageObject {
     public void performFlightSearch(FlightSearch flightSearch) {
         LOGGER.debug("performFlightSearch starts, search entity: [{}]", flightSearch);
 
-        // Accept cookies modal
         cookiesHandler.click();
 
-        // Fill in the flight origin
         originInput.typeAndEnter(flightSearch.getOrigin());
 
-        // Fill in the flight destination
         destinationInput.typeAndEnter(flightSearch.getDestination());
 
-        // Choose one way flight if needed
-        if (!flightSearch.getIsRoundTrip()) {
-            oneWayLabel.click();
-        }
+        fillInFlightDates(
+            flightSearch.getDepartureDate(),
+            flightSearch.getReturnDate(),
+            flightSearch.getIsRoundTrip()
+        );
 
-        // Fill in the flight outbound date
-        clickDesiredDate(flightSearch.getDepartureDate());
-
-        // Submit the search
         btnSubmitHomeSearcher.click();
 
-        // Ignore Booking.com promotional Tab
-        List<String> tabs = new ArrayList<String>(getDriver().getWindowHandles());
-        getDriver().switchTo().window(tabs.get(1));
+        switchToVuelingResultsTab();
     }
 
-    private void clickDesiredDate(String date) {
-        LocalDate currentDate = LocalDate.now();
+    private void fillInFlightDates(String departureDate, String returnDate, Boolean isRoundTrip) {
+        clickDesiredDate(departureDate);
+        if (isRoundTrip) {
+            clickDesiredDate(returnDate, departureDate);
+            return;
+        }
+        oneWayLabel.click();
+    }
+
+    private void clickDesiredDate(String date, String... currentCalendarDate) {
+        LocalDate currentDate = currentCalendarDate.length > 0
+                ? LocalDate.parse(currentCalendarDate[0], DATE_FORMATTER)
+                : LocalDate.now();
         LocalDate desiredDate = LocalDate.parse(date, DATE_FORMATTER);
 
         // Navigate to the desired month interacting through the Vueling calendar
-        Integer monthDiff = calculateMonthDifference(currentDate, desiredDate);
-        adjustVuelingCalendar(monthDiff);
+        Integer monthDiff = calculateMonthDiff(currentDate, desiredDate);
+        navigateVuelingCalendar(monthDiff);
 
         WebElementFacade desiredDayElement = find(By.id(
             constructElementId(desiredDate)
@@ -72,17 +77,22 @@ public class FlightSearchPage extends PageObject {
         desiredDayElement.click();
     }
 
-    private void adjustVuelingCalendar(Integer monthDiff) {
+    private void navigateVuelingCalendar(Integer monthDiff) {
         WebElementFacade calendarButton = monthDiff < 0
-                ? prevButtonCalendar
-                : nextButtonCalendar;
+            ? prevButtonCalendar
+            : nextButtonCalendar;
 
         for (int i = 0; i < Math.abs(monthDiff); i++) {
             calendarButton.click();
         }
     }
 
-    private Integer calculateMonthDifference(LocalDate currentDate, LocalDate desiredDate) {
+    private void switchToVuelingResultsTab() {
+        List<String> currentTabs = new ArrayList<>(getDriver().getWindowHandles());
+        getDriver().switchTo().window(currentTabs.get(1));
+    }
+
+    private Integer calculateMonthDiff(LocalDate currentDate, LocalDate desiredDate) {
         return (
             desiredDate.getMonthValue() - currentDate.getMonthValue() +
             12 * (desiredDate.getYear() - currentDate.getYear())
