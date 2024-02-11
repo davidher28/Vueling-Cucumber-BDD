@@ -16,7 +16,7 @@ import pages.FlightSearchPage;
 import java.lang.invoke.MethodHandles;
 import java.util.Map;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class FlightSearchSteps {
 
@@ -61,6 +61,6 @@ public class FlightSearchSteps {
         LOGGER.debug("iGetTheAvailableFlightsInTheFlightResultsList starts");
 
         // Verify the available flights in the results page for the performed search
-        assertFalse(flightSearchResultsPage.getFlightResults().isEmpty());
+        assertTrue(flightSearchResultsPage.getFlightResultsNumber() > 0);
     }
 }

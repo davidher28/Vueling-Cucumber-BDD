@@ -17,7 +17,7 @@ public class FlightSearchResultsPage extends PageObject {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     private WebElementFacade flightCardsContainer;
 
-    public List<WebElement> getFlightResults() {
+    public Integer getFlightResultsNumber() {
         LOGGER.debug("getFlightResults starts");
 
         List<WebElement> flightResults = flightCardsContainer.findElements(
@@ -25,6 +25,6 @@ public class FlightSearchResultsPage extends PageObject {
         );
 
         LOGGER.debug("getFlightResultsNumber ends, number of flights: [{}]", flightResults.size());
-        return flightResults;
+        return flightResults.size();
     }
 }
