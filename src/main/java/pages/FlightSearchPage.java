@@ -74,8 +74,8 @@ public class FlightSearchPage extends PageObject {
 
     private void clickDesiredDate(String date, String... currentCalendarDate) {
         LocalDate currentDate = currentCalendarDate.length > 0
-                ? LocalDate.parse(currentCalendarDate[0], DATE_FORMATTER)
-                : LocalDate.now();
+            ? LocalDate.parse(currentCalendarDate[0], DATE_FORMATTER)
+            : LocalDate.now();
         LocalDate desiredDate = LocalDate.parse(date, DATE_FORMATTER);
 
         // Navigate to the desired month interacting through the Vueling calendar
