@@ -60,7 +60,7 @@ public class FlightSearchSteps {
     public void iGetTheAvailableFlightsInTheFlightResultsList() throws Throwable {
         LOGGER.debug("iGetTheAvailableFlightsInTheFlightResultsList starts");
 
-        // Verify the available flights in the results page for the performed search
+        // Verify there are available flights in the results page for the performed search
         assertTrue(flightSearchResultsPage.getFlightResultsNumber() > 0);
     }
 }
