@@ -39,3 +39,5 @@ Este README proporciona instrucciones acerca de la ejecución del `FlightSearchT
 4. Verificar el reporte generado en el directorio `target/site/serenity/index.html`.
 ![Report1.png](public%2FReport1.png)
 ![Report2.png](public%2FReport2.png)
+5. Verificar el video de la ejecución de la prueba en el directorio `target/site/serenity/serenity.mp4`.
+[TestExecution.mov](public%2FTestExecution.mov)
