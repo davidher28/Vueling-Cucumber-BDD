@@ -1,6 +1,6 @@
 package stepdefs;
 
-import application.FlightSearch;
+import domain.FlightSearch;
 import builders.FlightSearchBuilder;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Given;

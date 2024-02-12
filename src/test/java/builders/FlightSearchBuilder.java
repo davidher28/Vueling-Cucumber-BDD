@@ -1,6 +1,6 @@
 package builders;
 
-import application.FlightSearch;
+import domain.FlightSearch;
 
 public class FlightSearchBuilder {
 
