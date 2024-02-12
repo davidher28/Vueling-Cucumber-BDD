@@ -40,4 +40,4 @@ Este README proporciona instrucciones acerca de la ejecución del `FlightSearchT
 <img width="1213" alt="Report1" src="https://github.com/davidher28/Vueling-Cucumber-BDD/assets/22640061/eff63126-5e40-4257-bf83-7f9e4465de0e">
 <img width="1215" alt="Report2" src="https://github.com/davidher28/Vueling-Cucumber-BDD/assets/22640061/7a717635-07f3-4652-8e23-a4f53674fd05">
 5. Verificar el video de la ejecución de la prueba en el directorio `target/site/serenity/serenity.mp4`.
-https://github.com/davidher28/Vueling-Cucumber-BDD/assets/22640061/539c72ed-4356-4fa2-a21a-88a391a69a05
+![Ejecución de la prueba](https://github.com/davidher28/Vueling-Cucumber-BDD/assets/22640061/539c72ed-4356-4fa2-a21a-88a391a69a05)
