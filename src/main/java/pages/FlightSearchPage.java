@@ -39,8 +39,10 @@ public class FlightSearchPage extends PageObject {
 
         cookiesHandler.click();
 
+        originInput.click();
         originInput.typeAndEnter(flightSearch.getOrigin());
 
+        destinationInput.click();
         destinationInput.typeAndEnter(flightSearch.getDestination());
 
         fillInFlightDates(
