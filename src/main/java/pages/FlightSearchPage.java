@@ -58,6 +58,7 @@ public class FlightSearchPage extends PageObject {
 
     private void fillInFlightDates(String departureDate, String returnDate, Boolean isRoundTrip) {
         clickDesiredDate(departureDate);
+
         if (isRoundTrip) {
             clickDesiredDate(returnDate, departureDate);
             return;
@@ -67,6 +68,7 @@ public class FlightSearchPage extends PageObject {
 
     private void increaseNumberOfPassengers(Integer numberOfPassengers) {
         passengersInputLabel.click();
+
         for (int i = 0; i < numberOfPassengers - 1; i++) {
             adultsIncrease.click();
         }
@@ -78,10 +80,11 @@ public class FlightSearchPage extends PageObject {
             : LocalDate.now();
         LocalDate desiredDate = LocalDate.parse(date, DATE_FORMATTER);
 
-        // Navigate to the desired month interacting through the Vueling calendar
+        // Navigate to the desired month interacting with the Vueling calendar
         Integer monthDiff = calculateMonthDiff(currentDate, desiredDate);
         navigateVuelingCalendar(monthDiff);
 
+        // Click the desired day in the Vueling calendar
         WebElementFacade desiredDayElement = find(By.id(
             constructCalendarDayId(desiredDate)
         ));
